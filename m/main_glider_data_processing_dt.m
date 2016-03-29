@@ -1,4 +1,5 @@
 %MAIN_GLIDER_DATA_PROCESSING_DT  Run delayed time glider processing chain.
+%% ----- F. Cyr Local copy ---- %% 
 %
 %  Description:
 %    This script develops the processing chain for delayed time glider data:
@@ -242,6 +243,7 @@ for deployment_idx = 1:numel(deployment_list)
   netcdf_l0_file = strfstruct(config.paths_local.netcdf_l0, deployment);
   netcdf_l1_file = strfstruct(config.paths_local.netcdf_l1, deployment);
   netcdf_l2_file = strfstruct(config.paths_local.netcdf_l2, deployment);
+  matlab_file = strfstruct(config.paths_local.matlab_l2, deployment);
   source_files = {};
   meta_raw = struct();
   data_raw = struct();
@@ -607,7 +609,24 @@ for deployment_idx = 1:numel(deployment_list)
     end
   end
 
-
+  
+  %% Generate Matlab output file, if needed and possible.
+  if ~isempty(fieldnames(data_gridded)) && ~isempty(matlab_file)
+    disp('Generating Matlab output...');
+    try
+      outputs.matlab = generateOutputMatlab( ...
+          matlab_file, data_processed, meta_processed,... 
+          data_gridded, meta_gridded, deployment);      
+      disp(['Output Matlab generated: ' ...
+            outputs.matlab '.']);
+    catch exception
+      disp(['Error generating Matlab output ' ...
+            matlab_file ':']);
+      disp(getReport(exception, 'extended'));
+    end
+  end
+  
+  
   %% Generate gridded data figures.
   if ~isempty(fieldnames(data_gridded)) && ~isempty(figure_dir)
     disp('Generating figures from gridded data...');

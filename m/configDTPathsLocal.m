@@ -20,6 +20,8 @@ function local_paths = configDTPathsLocal()
 %        (well referenced data with conversions, corrections and derivations).
 %      NETCDF_L2: path pattern of NetCDF file for processed grid data
 %        (processed data interpolated on vertical instantaneous profiles).
+%      MATLAB_L2: path pattern of Matlab file to save processed data
+%        (referenced + gridded data)
 %      PROCESSING_LOG: path pattern of processing log file.
 %    These path patterns are converted to true paths through the function
 %    STRFSTRUCT.

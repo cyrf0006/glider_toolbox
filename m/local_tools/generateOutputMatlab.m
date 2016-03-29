@@ -1,19 +1,15 @@
-function nc = generateOutputMatlab(filename, data, meta, data_grid, meta_grid, deployment)
-%GENERATEOUTPUTNETCDF  Generate NetCDF output for glider deployment data.
+function mat = generateOutputMatlab(filename, data, meta, data_grid, meta_grid, deployment)
+%GENERATEOUTPUTMATLAB  Generate Matlab output for glider deployment data.
 %
 %  Syntax:
-%    NC = GENERATEOUTPUTNETCDF(FILENAME, DATA, META, DATA_GRID, META_GRID, DEPLOYMENT, VARS, DIMS, ATTS)
-%    NC = GENERATEOUTPUTNETCDF(FILENAME, DATA, META, DEPLOYMENT, VARS, DIMS, ATTS, OPTIONS)
-%    NC = GENERATEOUTPUTNETCDF(FILENAME, DATA, META, DEPLOYMENT, VARS, DIMS, ATTS, OPT1, VAL1, ...)
-%
+%    MAT = GENERATEOUTPUTNETCDF(FILENAME, DATA, META, DATA_GRID, META_GRID, DEPLOYMENT)
 %
 %  Notes:
 %    Usually input data is the output of LOADSLOCUMDATA or LOADSEAGLIDERDATA, 
 %    PROCESSGLIDERDATA or GRIDGLIDERDATA.
-%    
 %
 %  Examples:
-%    nc = generateOutputNetCDF(filename, data, deployment, vars, dims, atts)
+%    mat = generateOutputNetCDF(filename, data, meta, data_grid, meta_grid, deployment)
 %
 %  See also:
 %    SAVENC
@@ -94,6 +90,6 @@ function nc = generateOutputMatlab(filename, data, meta, data_grid, meta_grid, d
               'Matlab file generation succeed but problems with output file %s: %s.', ...
               filename, attrout);
     end
-    nc = attrout.Name;
+    mat = attrout.Name;
 
 end
