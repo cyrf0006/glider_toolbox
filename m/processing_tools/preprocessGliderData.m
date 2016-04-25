@@ -361,7 +361,7 @@ function [data_pre, meta_pre] = preprocessGliderData(data_raw, meta_raw, varargi
   if ~isempty(options.sg_dive_params)
     data_raw = alignSGDiveParams(data_raw, meta_raw, options.sg_dive_params);
   end
-
+  
   
   %% Select time coordinate sensor.
   % Find preferred valid time sensor available in list of sensor fields.
@@ -612,7 +612,7 @@ function [data_pre, meta_pre] = preprocessGliderData(data_raw, meta_raw, varargi
       break;
     end
   end
-
+  
   
   %% Select heading sensor.
   % Find preferred valid heading sensor available in list of sensor fields.
@@ -770,13 +770,12 @@ function [data_pre, meta_pre] = preprocessGliderData(data_raw, meta_raw, varargi
         meta_pre.time_ctd.sources = time_ctd_field;
         fprintf('  time CTD    : %s\n', time_ctd_field);
       end
-      % Seaexplorer glider has GPCTD_DOF
+      % SeaExplorer glider has GPCTD_DOF
       if ~isempty(oxygen_ctd_field)
           data_pre.oxygen_frequency = data_raw.(oxygen_ctd_field);
           meta_pre.oxygen_frequency.sources = oxygen_ctd_field;
           fprintf('  oxygen frequency (gpctd)    : %s\n', oxygen_ctd_field);
       end
-       
       if ~isempty(pressure_conversion_func)
         if ischar(pressure_conversion_func)
           pressure_conversion_func = str2func(pressure_conversion_func);
@@ -891,6 +890,7 @@ function [data_pre, meta_pre] = preprocessGliderData(data_raw, meta_raw, varargi
       break;
     end
   end
+  
   
   %% Select fluorescence and scatter sensor (chlorophyll, turbidity, cdom...).
   % Find preferred valid fluorescence and turbidity sensor available in list of 

@@ -186,7 +186,7 @@ config.paths_local = configDTPathsLocal();
 %% Configure NetCDF outputs.
 config.output_netcdf_l0_slocum = configDTOutputNetCDFL0Slocum();
 config.output_netcdf_l0_seaglider = configDTOutputNetCDFL0Seaglider();
-config.output_netcdf_l0_seaexplorer = configDTOutputNetCDFL0Seaexplorer();
+config.output_netcdf_l0_seaexplorer = configDTOutputNetCDFL0SeaExplorer();
 config.output_netcdf_l1 = configDTOutputNetCDFL1();
 config.output_netcdf_l2 = configDTOutputNetCDFL2();
 
@@ -194,11 +194,11 @@ config.output_netcdf_l2 = configDTOutputNetCDFL2();
 %% Configure processing options.
 config.preprocessing_options_slocum = configDataPreprocessingSlocum();
 config.preprocessing_options_seaglider = configDataPreprocessingSeaglider();
-config.preprocessing_options_seaexplorer = configDataPreprocessingSeaexplorer();
+config.preprocessing_options_seaexplorer = configDataPreprocessingSeaExplorer();
 config.processing_options_slocum_g1 = configDataProcessingSlocumG1();
 config.processing_options_slocum_g2 = configDataProcessingSlocumG2();
 config.processing_options_seaglider = configDataProcessingSeaglider();
-config.processing_options_seaexplorer = configDataProcessingSeaexplorer();
+config.processing_options_seaexplorer = configDataProcessingSeaExplorer();
 config.gridding_options = configDataGridding();
 config.cleaning_options = configDataCleaning();
 
@@ -207,7 +207,7 @@ config.cleaning_options = configDataCleaning();
 %% Configure file download and conversion and data loading.
 config.file_options_slocum = configDTFileOptionsSlocum();
 config.file_options_seaglider = configDTFileOptionsSeaglider();
-config.file_options_seaexplorer = configDTFileOptionsSeaexplorer();
+config.file_options_seaexplorer = configDTFileOptionsSeaExplorer();
  
 
 %% Configure local deployment information source.
@@ -225,7 +225,6 @@ if isempty(deployment_list)
 else
   disp(['Selected deployments found: ' num2str(numel(deployment_list)) '.']);
 end
-
 
 %% Process active deployments.
 for deployment_idx = 1:numel(deployment_list)
@@ -438,10 +437,12 @@ for deployment_idx = 1:numel(deployment_list)
         source_files = meta_raw.sources;
       case {'seaexplorer'}
         [meta_raw, data_raw] = ...
-          loadSeaexplorerData(ascii_dir, ...
-                         file_options.nav_name_pattern, ...
-                         file_options.sci_name_pattern, ...
-                         'format', 'struct');
+          loadSeaExplorerData(ascii_dir, ...
+                            file_options.gli_name_pattern, ...
+                            file_options.dat_name_pattern, ...
+                            'timegli', file_options.gli_time, ...
+                            'timedat', file_options.dat_time, ...
+                            'format', 'struct');
         source_files = meta_raw.sources;
       otherwise
         warning('glider_toolbox:main_glider_data_processing_dt:InvalidGliderType', ...
@@ -563,19 +564,19 @@ for deployment_idx = 1:numel(deployment_list)
   end
 
 
-  %% Generate processed data figures.
-  if ~isempty(fieldnames(data_processed)) && ~isempty(figure_dir)
-    disp('Generating figures from processed data...');
-    try
-      figures.figproc = generateGliderFigures( ...
-        data_processed, figproc_options, ...
-        'date', datestr(posixtime2utc(posixtime()), 'yyyy-mm-ddTHH:MM:SS+00:00'), ...
-        'dirname', figure_dir);
-    catch exception
-      disp('Error generating processed data figures:');
-      disp(getReport(exception, 'extended'));
-    end
-  end
+% $$$   %% Generate processed data figures.
+% $$$   if ~isempty(fieldnames(data_processed)) && ~isempty(figure_dir)
+% $$$     disp('Generating figures from processed data...');
+% $$$     try
+% $$$       figures.figproc = generateGliderFigures( ...
+% $$$         data_processed, figproc_options, ...
+% $$$         'date', datestr(posixtime2utc(posixtime()), 'yyyy-mm-ddTHH:MM:SS+00:00'), ...
+% $$$         'dirname', figure_dir);
+% $$$     catch exception
+% $$$       disp('Error generating processed data figures:');
+% $$$       disp(getReport(exception, 'extended'));
+% $$$     end
+% $$$   end
 
 
   %% Grid processed glider data.
@@ -627,19 +628,19 @@ for deployment_idx = 1:numel(deployment_list)
   end
   
   
-  %% Generate gridded data figures.
-  if ~isempty(fieldnames(data_gridded)) && ~isempty(figure_dir)
-    disp('Generating figures from gridded data...');
-    try
-      figures.figgrid = generateGliderFigures( ...
-        data_gridded, figgrid_options, ...
-        'date', datestr(posixtime2utc(posixtime()), 'yyyy-mm-ddTHH:MM:SS+00:00'), ...
-        'dirname', figure_dir);
-    catch exception
-      disp('Error generating gridded data figures:');
-      disp(getReport(exception, 'extended'));
-    end
-  end
+% $$$   %% Generate gridded data figures.
+% $$$   if ~isempty(fieldnames(data_gridded)) && ~isempty(figure_dir)
+% $$$     disp('Generating figures from gridded data...');
+% $$$     try
+% $$$       figures.figgrid = generateGliderFigures( ...
+% $$$         data_gridded, figgrid_options, ...
+% $$$         'date', datestr(posixtime2utc(posixtime()), 'yyyy-mm-ddTHH:MM:SS+00:00'), ...
+% $$$         'dirname', figure_dir);
+% $$$     catch exception
+% $$$       disp('Error generating gridded data figures:');
+% $$$       disp(getReport(exception, 'extended'));
+% $$$     end
+% $$$   end
 
  
   %% Copy selected products to corresponding public location, if needed.
