@@ -599,7 +599,6 @@ function [data_proc, meta_proc] = processGliderData(data_pre, meta_pre, varargin
     meta_proc.distance_over_ground.method = 'computeCumulativeDistance';
   end
   
-  
   %% Convert and filter pressure, if pressure available and needed.
   if isfield(data_proc, 'pressure')
     % Apply pressure filter, if needed.

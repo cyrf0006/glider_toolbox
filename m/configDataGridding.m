@@ -74,7 +74,8 @@ function gridding_options = configDataGridding()
     'fluorescence_monitoring_270_376'
     'methane_concentration'
     'backscatter_700'
-    'oxygen_frequency'                  
+    'oxygen_frequency'   
+    'pitch'
   };
 
 end
