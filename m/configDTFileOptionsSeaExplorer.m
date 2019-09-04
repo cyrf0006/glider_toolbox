@@ -55,8 +55,8 @@ function seaexplorer_options = configDTFileOptionsSeaExplorer()
   seaexplorer_options.gli_name_pattern = '^.*gli.*$';
   
   % Science (.dat) files to use:
-    seaexplorer_options.dat_name_pattern = '^.*pld.*$';
-  %seaexplorer_options.dat_name_pattern = '^.*pld.*$';
+  seaexplorer_options.dat_name_pattern = '^.*pld1.*$';
+  %seaexplorer_options.dat_name_pattern = '^.*dat.*$';
 
   % Time variable column in navigation (.gli) files:
   seaexplorer_options.gli_time = 'Timestamp';

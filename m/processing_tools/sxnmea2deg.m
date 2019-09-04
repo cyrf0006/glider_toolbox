@@ -54,23 +54,32 @@ function varargout = sxnmea2deg(varargin)
 %  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   error(nargchk(1, 2, nargin, 'struct'));
-  
+    
   for varargidx = 1:numel(varargin)
     nmea = varargin{varargidx};
     deg = fix(nmea/100) + rem(nmea,100)/60;
     varargout{varargidx} = deg;
   end
   
-  % Report null values as invalid SeaExplorer locations.
+  % Remove repetition in coordinates (no GPS = repeat last position)
   if numel(varargin) > 1
-    invalid = (varargin{1}(:) == 0) & (varargin{2}(:) == 0);
-    if ~isempty(invalid)
-      varargout{1}(invalid) = nan;
-      varargout{2}(invalid) = nan;
-      warning('glider_toolbox:sxnmeadeg:InvalidPosition', ...
-              '%d invalid positions [0, 0] replaced by [NaN, NaN].', ...
-              sum(invalid));
-    end
+      index_valid = find(~isnan(varargin{1}));
+      %      invalid = find(diff(varargin{1}(:)) == 0 & diff(varargin{2}(:)) == 0);
+      index_repetition = find(diff(varargin{1}(index_valid)) == 0 & diff(varargin{2}(index_valid)) == 0);
+      if ~isempty(index_repetition)
+          varargout{1}(index_valid(index_repetition+1)) = NaN;
+          varargout{2}(index_valid(index_repetition+1)) = NaN;
+          warning('glider_toolbox:sxnmeadeg:Repetition of GPS coordinates', ...
+                  '%d invalid positions replaced by [NaN, NaN].', ...
+                  sum(index_repetition));
+      end
+% $$$       if ~isempty(invalid)
+% $$$           varargout{1}(invalid+1) = NaN;
+% $$$           varargout{2}(invalid+1) = NaN;
+% $$$           warning('glider_toolbox:sxnmeadeg:Repetition of GPS coordinates', ...
+% $$$                   '%d invalid positions replaced by [NaN, NaN].', ...
+% $$$                   sum(invalid));
+% $$$       end
   end
-
+ 
 end

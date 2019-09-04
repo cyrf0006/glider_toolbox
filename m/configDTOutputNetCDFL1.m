@@ -620,93 +620,134 @@ function ncl1_info = configDTOutputNetCDFL1()
 
   %% Variables specific to SeaExplorer
   var_attr_list.fluorescence_270_340 = {
-      'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 270/340nm'
-      'standard_name' 'fluorescence_excitation_270nm_emission_340nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      '_FillValue'    default_fill_value
-      'comment1'      'Tryptophan-like or Naphtalene-like measurements'
-      'comment2'      '270nm is the nominal wavelength of the LED'
-      'sources'       []};
+    'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 270/340nm'
+    'standard_name' 'fluorescence_excitation_270nm_emission_340nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    '_FillValue'    default_fill_value
+    'comment1'      'Tryptophan-like or Naphtalene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    'sources'       []};
 
   var_attr_list.fluorescence_255_360 = {
-      'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 255/360nm'
-      'standard_name' 'fluorescence_excitation_255nm_emission_360nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      '_FillValue'    default_fill_value
-      'comment1'      'Phenanthren-like measurements or water-soluble fraction of petroleum'
-      'comment2'      '255nm is the nominal wavelength of the LED'
-      'sources'       []};
+    'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 255/360nm'
+    'standard_name' 'fluorescence_excitation_255nm_emission_360nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    '_FillValue'    default_fill_value
+    'comment1'      'Phenanthren-like measurements or water-soluble fraction of petroleum'
+    'comment2'      '255nm is the nominal wavelength of the LED'
+    'sources'       []};
     
   var_attr_list.fluorescence_monitoring_270_340 = {
-      'long_name'     'Minifluo-UV1 monitoring channel of the 270nm LED'
-      'standard_name' 'fluorescence_monitoring_270_340nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      'comment1'      'Measures variations in LED excitation wavelength'
-      'comment2'      '270nm is the nominal wavelength of the LED'
-      '_FillValue'    default_fill_value
-      'sources'       []};
+    'long_name'     'Minifluo-UV1 monitoring channel of the 270nm LED'
+    'standard_name' 'fluorescence_monitoring_270_340nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Measures variations in LED excitation wavelength'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value
+    'sources'       []};
 
   var_attr_list.fluorescence_monitoring_255_360 = {
-      'long_name'     'Minifluo-UV1 monitoring channel of the 255nm LED'
-      'standard_name' 'fluorescence_monitoring_255_360nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      'comment1'      'Measures variations in LED excitation wavelength'
-      'comment2'      '255nm is the nominal wavelength of the LED'
-      '_FillValue'    default_fill_value
-      'sources'       []};
+    'long_name'     'Minifluo-UV1 monitoring channel of the 255nm LED'
+    'standard_name' 'fluorescence_monitoring_255_360nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Measures variations in LED excitation wavelength'
+    'comment2'      '255nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value
+    'sources'       []};
 
   var_attr_list.fluorescence_260_315 = {
-      'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 260/315nm'
-      'standard_name' 'fluorescence_excitation_260nm_emission_315nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      '_FillValue'    default_fill_value
-      'comment1'      'Fluorene-like measurements'
-      'comment2'      '260nm is the nominal wavelength of the LED'
-      'sources'       []};
+    'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 260/315nm'
+    'standard_name' 'fluorescence_excitation_260nm_emission_315nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    '_FillValue'    default_fill_value
+    'comment1'      'Fluorene-like measurements'
+    'comment2'      '260nm is the nominal wavelength of the LED'
+    'sources'       []};
 
   var_attr_list.fluorescence_270_376 = {
-      'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 270/376nm'
-      'standard_name' 'fluorescence_excitation_270nm_emission_376nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      '_FillValue'    default_fill_value
-      'comment1'      'Pyrene-like measurements'
-      'comment2'      '270nm is the nominal wavelength of the LED'
-      'sources'       []};
+    'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 270/376nm'
+    'standard_name' 'fluorescence_excitation_270nm_emission_376nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    '_FillValue'    default_fill_value
+    'comment1'      'Pyrene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    'sources'       []};
     
   var_attr_list.fluorescence_monitoring_260_315 = {
-      'long_name'     'Minifluo-UV2 monitoring channel of the 260nm LED'
-      'standard_name' 'fluorescence_monitoring_260_315nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      'comment1'      'Measures variations in LED excitation wavelength'
-      'comment2'      '260nm is the nominal wavelength of the LED'
-      '_FillValue'    default_fill_value
-      'sources'       []};
+    'long_name'     'Minifluo-UV2 monitoring channel of the 260nm LED'
+    'standard_name' 'fluorescence_monitoring_260_315nm'
+    'units'         'counts'
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Measures variations in LED excitation wavelength'
+    'comment2'      '260nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value
+    'sources'       []};
 
-  var_attr_list.fluorescence_monitoring_270_376 = {
-      'long_name'     'Minifluo-UV2 monitoring channel of the 270nm LED'
-      'standard_name' 'fluorescence_monitoring_270_376nm'
-      'units'         'counts'
-      'coordinates'   'time depth latitude longitude'      
-      'comment1'      'Measures variations in LED excitation wavelength'
-      'comment2'      '270nm is the nominal wavelength of the LED'
-      '_FillValue'    default_fill_value
-      'sources'       []};
-        
-    var_attr_list.methane_concentration = {
-      'long_name'     'Methane concentration (scaled)'
-      'standard_name' 'methane_concentration'
-      'units'         'ug/L'
-      'coordinates'   'time depth latitude longitude'
-      '_FillValue'    default_fill_value
-      'sources'       []};  
-        
+  var_attr_list.fluorescence_tryptophan_scaled = {
+    'long_name'     'Tryptophan-like fluorescence (unitless)'
+    'standard_name' 'fluorescence_tryptophan_scaled'
+    'units'         ''
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Tryptophan-like measurements'
+    'comment2'      ''
+    '_FillValue'    default_fill_value
+    'sources'       []};
+    
+  var_attr_list.fluorescence_phenanthrene_scaled = {
+    'long_name'     'Phenanthrene-like fluorescence (unitless)'
+    'standard_name' 'fluorescence_phenanthrene_scaled'
+    'units'         ''
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Phenanthrene-like measurements'
+    'comment2'      ''
+    '_FillValue'    default_fill_value
+    'sources'       []};
+ 
+  var_attr_list.fluorescence_naphthalene_scaled = {
+    'long_name'     'Naphthalene-like fluorescence (unitless)'
+    'standard_name' 'fluorescence_naphthalene_scaled'
+    'units'         ''
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Naphthalene-like measurements'
+    'comment2'      ''
+    '_FillValue'    default_fill_value
+    'sources'       []};
+  
+  var_attr_list.fluorescence_fluorene_scaled = {
+    'long_name'     'Fluorene-like fluorescence (unitless)'
+    'standard_name' 'fluorescence_fluorene_scaled'
+    'units'         ''
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Fluorene-like measurements'
+    'comment2'      ''
+    '_FillValue'    default_fill_value
+    'sources'       []};
+   
+  var_attr_list.fluorescence_pyrene_scaled = {
+    'long_name'     'Pyrene-like fluorescence (unitless)'
+    'standard_name' 'fluorescence_pyrene_scaled'
+    'units'         ''
+    'coordinates'   'time depth latitude longitude'      
+    'comment1'      'Pyrene-like measurements'
+    'comment2'      ''
+    '_FillValue'    default_fill_value
+    'sources'       []};
+  
+  var_attr_list.methane_concentration = {
+    'long_name'     'Methane concentration (scaled)'
+    'standard_name' 'methane_concentration'
+    'units'         'ug/L'
+    'coordinates'   'time depth latitude longitude'
+    '_FillValue'    default_fill_value
+    'sources'       []};  
+   
+    
     
   %% Define global attributes (they may be overwritten with deployment values).
   % To define the global attributes easily and readably, add them to this

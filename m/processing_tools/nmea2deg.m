@@ -51,7 +51,7 @@ function varargout = nmea2deg(varargin)
 %  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   error(nargchk(1, 2, nargin, 'struct'));
-  
+
   for varargidx = 1:numel(varargin)
     nmea = varargin{varargidx};
     deg = fix(nmea/100) + rem(nmea,100)/60;

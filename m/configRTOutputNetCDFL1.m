@@ -22,7 +22,7 @@ function ncl1_info = configRTOutputNetCDFL1()
 %      VARIABLES: struct defining variable metadata. Field names are variable
 %        names and field values are structs as needed by function SAVENC.
 %        It should have the following fields:
-%          DIMENSIONS: string cell array with the names of the dimensions
+%          DIMENSIONS: string cell array with the names of them dimensions
 %            of the variable.
 %          ATTRIBUTES: struct array with fields 'NAME' and 'VALUE' defining
 %            the attributes of the variable.

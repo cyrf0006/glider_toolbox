@@ -760,13 +760,84 @@ function ncl2_info = configDTOutputNetCDFL2()
       'grid_coordinates' []
       'grid_method'      [] };
       
-    var_attr_list.methane_concentration = {
+  
+  var_attr_list.fluorescence_tryptophan_scaled = {
+      'long_name'     'Tryptophan-like fluorescence (unitless)'
+      'standard_name' 'fluorescence_tryptophan_scaled'
+      'units'         ''
+      'coordinates'   'time depth latitude longitude'      
+      'comment1'      'Tryptophan-like measurements'
+      'comment2'      ''
+      '_FillValue'    default_fill_value
+      'sources'       []
+      'conversion'       []
+      'grid_sources'     []
+      'grid_coordinates' []
+      'grid_method'      [] };
+          
+  var_attr_list.fluorescence_phenanthrene_scaled = {
+      'long_name'     'Phenanthrene-like fluorescence (unitless)'
+      'standard_name' 'fluorescence_phenanthrene_scaled'
+      'units'         ''
+      'coordinates'   'time depth latitude longitude'      
+      'comment1'      'Phenanthrene-like measurements'
+      'comment2'      ''
+      '_FillValue'    default_fill_value
+      'sources'       []
+      'conversion'       []
+      'grid_sources'     []
+      'grid_coordinates' []
+      'grid_method'      [] };
+       
+  var_attr_list.fluorescence_naphthalene_scaled = {
+      'long_name'     'Naphthalene-like fluorescence (unitless)'
+      'standard_name' 'fluorescence_naphthalene_scaled'
+      'units'         ''
+       'coordinates'  'time depth latitude longitude'      
+      'comment1'      'Naphthalene-like measurements'
+      'comment2'      ''
+      '_FillValue'    default_fill_value
+      'sources'       []
+      'conversion'       []
+      'grid_sources'     []
+      'grid_coordinates' []
+      'grid_method'      [] };
+       
+  var_attr_list.fluorescence_fluorene_scaled = {
+      'long_name'     'Fluorene-like fluorescence (unitless)'
+      'standard_name' 'fluorescence_fluorene_scaled'
+      'units'         ''
+      'coordinates'   'time depth latitude longitude'      
+      'comment1'      'Fluorene-like measurements'
+      'comment2'      ''
+      '_FillValue'    default_fill_value
+      'sources'       []
+      'conversion'       []
+      'grid_sources'     []
+      'grid_coordinates' []
+      'grid_method'      [] };
+         
+  var_attr_list.pyrene_scaled = {
+      'long_name'     'Pyrene-like fluorescence (unitless)'
+      'standard_name' 'fluorescence_pyrene_scaled'
+      'units'         ''
+      'coordinates'   'time depth latitude longitude'      
+      'comment1'      'Pyrene-like measurements'
+      'comment2'      ''
+      '_FillValue'    default_fill_value
+      'sources'       []
+      'conversion'       []
+      'grid_sources'     []
+      'grid_coordinates' []
+      'grid_method'      [] };
+         
+  var_attr_list.methane_concentration = {
       'long_name'     'Methane concentration (scaled)'
       'standard_name' 'methane_concentration'
       'units'         'ug/L'
       'coordinates'   'time depth latitude longitude'
       '_FillValue'    default_fill_value
-       'sources'       []
+      'sources'       []
       'conversion'       []
       'grid_sources'     []
       'grid_coordinates' []

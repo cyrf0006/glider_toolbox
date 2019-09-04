@@ -416,7 +416,124 @@ function ncl0_info = configDTOutputNetCDFL0SeaExplorer()
     'comments'      'Alseamar methane sensor'
     '_FillValue'    default_fill_value };    
 
-  % MFL sensor (variable names new software April 2016).
+
+  % MFL sensor (variable names new software 2017).
+  % ---- MiniFluo1 : MFL-UV1 --- %
+  var_attr_list.MFLUV1_TMP = {
+    'long_name'     'Minifluo-UV1 detection circuit temperature'
+    'standard_name' 'temperature_of_MiniFluo_detection_circuit'
+    'units'         'Celsius'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV1_V1_COUNT = {
+    'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 270/340nm'
+    'standard_name' 'fluorescence_excitation_270nm_emission_340nm'
+    'units'         'counts'
+    'comment1'      'Tryptophan-like or Naphtalene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV1_V2_COUNT = {
+    'long_name'     'Minifluo-UV1 fluorescence Ex./Em. = 255/360nm'
+    'standard_name' 'fluorescence_excitation_255nm_emission_360nm'
+    'units'         'counts'
+    'comment1'      'Phenanthrene-like measurements or water-soluble fraction of petroleum'
+    'comment2'      '255nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV1_V3_COUNT = {
+    'long_name'     'Minifluo-UV1 monitoring channel of the 270nm LED'
+    'standard_name' 'fluorescence_monitoring_270_340nm'
+    'units'         'counts'
+    'comment1'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV1_V4_COUNT = {
+    'long_name'     'Minifluo-UV1 monitoring channel of the 255nm LED'
+    'standard_name' 'fluorescence_monitoring_255_360nm'
+    'units'         'counts'
+    'comment1'      '255nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV1_TRY_SCALED = {
+    'long_name'     'Tryptophan-like fluorescence (unitless)'
+    'standard_name' 'tryptophan_scaled'
+    'units'         ' '
+    'comment1'      'Tryptophan-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+    
+  var_attr_list.MFLUV1_PHE_SCALED = {
+    'long_name'     'Phenanthrene-like fluorescence (unitless)'
+    'standard_name' 'phenanthrene_scaled'
+    'units'         ' '
+    'comment1'      'Phenanthrene-like measurements'
+    'comment2'      '255nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+  
+   var_attr_list.MFLUV1_NAPH_SCALED = {
+    'long_name'     'Naphthalene-like fluorescence (unitless)'
+    'standard_name' 'naphthalene_scaled'
+    'units'         ' '
+    'comment1'      'Naphthalene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value }; 
+    
+  % ---- MiniFluo2 : MFL-UV2 --- %
+  var_attr_list.MFLUV2_TMP = {
+    'long_name'     'Minifluo-UV2 detection circuit temperature'
+    'standard_name' 'temperature_of_MiniFluo_detection_circuit'
+    'units'         'Celsius'
+    '_FillValue'    default_fill_value };
+  
+  var_attr_list.MFLUV2_V1_COUNT = {
+    'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 260/315nm'
+    'standard_name' 'fluorescence_excitation_260nm_emission_315nm'
+    'units'         'counts'
+    'comment1'      'Fluorene-like measurements'
+    'comment2'      '260nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV2_V2_COUNT = {
+    'long_name'     'Minifluo-UV2 fluorescence Ex./Em. = 270/376nm'
+    'standard_name' 'fluorescence_excitation_270nm_emission_376nm'
+    'units'         'counts'
+    'comment1'      'Pyrene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV2_V3_COUNT = {
+    'long_name'     'Minifluo-UV2 monitoring channel of the 260nm LED'
+    'standard_name' 'fluorescence_monitoring_260_315nm'
+    'units'         'counts'
+    'comment1'      '260nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.MFLUV2_V4_COUNT = {
+    'long_name'     'Minifluo-UV2 monitoring channel of the 270nm LED'
+    'standard_name' 'fluorescence_monitoring_270_376nm'
+    'units'         'counts'
+    'comment1'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };  
+  
+    var_attr_list.MFLUV2_PYR_SCALED = {
+    'long_name'     'Pyrene-like fluorescence (unitless)'
+    'standard_name' 'pyrene_scaled'
+    'units'         ' '
+    'comment1'      'Pyrene-like measurements'
+    'comment2'      '260nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value };
+  
+   var_attr_list.MFLUV2_FLU_SCALED = {
+    'long_name'     'Fluorene-like fluorescence (unitless)'
+    'standard_name' 'fluorene_scaled'
+    'units'         ' '
+    'comment1'      'Fluorene-like measurements'
+    'comment2'      '270nm is the nominal wavelength of the LED'
+    '_FillValue'    default_fill_value }; 
+   
+   
+  % MFL sensor (variable names new software April 2016).  
   % ---- MiniFluo1 : M1FL --- %
   var_attr_list.M1FL_TMPD = {
     'long_name'     'Minifluo-UV1 detection circuit temperature'
@@ -468,7 +585,7 @@ function ncl0_info = configDTOutputNetCDFL0SeaExplorer()
     '_FillValue'    default_fill_value };
 
   var_attr_list.M2FL_TMPE = {
-    'long_name'     'Minifluo-UV2 emission circuit temperature'
+    'long_name'     'Minifluo-UV2 emission circuit temperature' 
     'standard_name' 'temperature_of_MiniFluo_emission_circuit'
     'units'         'Celsius'
     '_FillValue'    default_fill_value };

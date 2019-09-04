@@ -72,9 +72,15 @@ function gridding_options = configDataGridding()
     'fluorescence_monitoring_260_315'
     'fluorescence_monitoring_270_340'
     'fluorescence_monitoring_270_376'
+    'fluorescence_tryptophan_scaled'
+    'fluorescence_phenanthrene_scaled'
+    'fluorescence_naphthalene_scaled'
+    'fluorescence_fluorene_scaled'
+    'fluorescence_pyrene_scaled'
     'methane_concentration'
     'backscatter_700'
-    'oxygen_frequency'                  
+    'oxygen_frequency'   
+    'pitch'
   };
 
 end
