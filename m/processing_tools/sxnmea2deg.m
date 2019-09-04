@@ -61,6 +61,7 @@ function varargout = sxnmea2deg(varargin)
     varargout{varargidx} = deg;
   end
   
+<<<<<<< HEAD
   % Remove repetition in coordinates (no GPS = repeat last position)
   if numel(varargin) > 1
       index_valid = find(~isnan(varargin{1}));
@@ -82,4 +83,18 @@ function varargout = sxnmea2deg(varargin)
 % $$$       end
   end
  
+=======
+  % Report null values as invalid SeaExplorer locations.
+  if numel(varargin) > 1
+    invalid = (varargin{1}(:) == 0) & (varargin{2}(:) == 0);
+    if ~isempty(invalid)
+      varargout{1}(invalid) = nan;
+      varargout{2}(invalid) = nan;
+      warning('glider_toolbox:sxnmeadeg:InvalidPosition', ...
+              '%d invalid positions [0, 0] replaced by [NaN, NaN].', ...
+              sum(invalid));
+    end
+  end
+
+>>>>>>> d1d474f945ee44d736f19ac785b6fa711946ec9a
 end
