@@ -60,16 +60,16 @@ function local_paths = configDTPathsLocal()
     
   error(nargchk(0, 0, nargin, 'struct'));
 
-  local_paths.binary_path    = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/binary';
-  local_paths.cache_path     = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/binary';
-  local_paths.log_path       = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/log';
-  local_paths.ascii_path     = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/ascii';
-  local_paths.figure_path    = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/figures';
-  local_paths.netcdf_l0      = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l0.nc';
-  local_paths.netcdf_l1      = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l1.nc';
-  local_paths.netcdf_l2      = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l2.nc';
-  local_paths.matlab_l2      = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/matlab/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l2.mat';
-  local_paths.processing_log = '/home/cyrf0006/Data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/processing.log';
+  local_paths.binary_path    = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/binary';
+  local_paths.cache_path     = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/binary';
+  local_paths.log_path       = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/log';
+  local_paths.ascii_path     = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/ascii';
+  local_paths.figure_path    = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/figures';
+  local_paths.netcdf_l0      = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l0.nc';
+  local_paths.netcdf_l1      = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l1.nc';
+  local_paths.netcdf_l2      = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/netcdf/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l2.nc';
+  local_paths.matlab_l2      = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/matlab/${GLIDER_NAME}_${DEPLOYMENT_START,Tyyyymmdd}_l2.mat';
+  local_paths.processing_log = '/home/cyrf0006/data/gliders_data/${GLIDER_NAME}/${DEPLOYMENT_START,Tyyyymmdd}/processing.log';
   
 % $$$   local_paths.figure_path    = '/NO/FIGURE';
   %  local_paths.netcdf_l0      = '/NO/L0';
