@@ -568,6 +568,28 @@ function ncl1_info = configDTOutputNetCDFL1()
     'calibration'            []
     'calibration_parameters' [] };
 
+  % Rinko
+  var_attr_list.rinko_oxygen = {
+    'long_name'     'Rinko dissolved oxygen'
+    'standard_name' 'oxygen_concentration'
+    'units'         'umol L-1'
+    'comment'       ''
+    'coordinates'   'time depth latitude longitude'
+    '_FillValue'    default_fill_value
+    'sources'                []
+    'conversion'             [] };
+
+  var_attr_list.rinko_temperature = {
+    'long_name'     'Rinko oxygen sensor temperature'
+    'standard_name' 'temperature_of_sensor_for_oxygen_in_sea_water'
+    'units'         'Celsius'
+    'coordinates'   'time depth latitude longitude'
+    '_FillValue'    default_fill_value
+    'sources'                []
+    'conversion'             []
+    'calibration'            []
+    'calibration_parameters' [] };
+
   var_attr_list.irradiance_412 = {
     'long_name'     'irradiance at 412nm wavelength'
     'standard_name' 'downwelling_spectral_spherical_irradiance_in_sea_water'

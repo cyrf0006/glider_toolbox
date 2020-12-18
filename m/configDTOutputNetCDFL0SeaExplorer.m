@@ -387,6 +387,21 @@ function ncl0_info = configDTOutputNetCDFL0SeaExplorer()
     'comments'      'WETLabs ECO puck FLNTU'
     '_FillValue'    default_fill_value };    
 
+  % Rinko oxygen sensor
+  var_attr_list.AROD_FT_TEMP = {
+    'long_name'     'Rinko sensor temperature'
+    'standard_name' 'Rinko_temperature'
+    'units'         'Celsius'
+    'comments'      'Rinko AROD FT'
+    '_FillValue'    default_fill_value };
+
+  var_attr_list.AROD_FT_DO = {
+    'long_name'     'Rinko sensor dissolved oxygen'
+    'standard_name' 'Dissolved_oxygen'
+    'units'         'unknown'
+    'comments'      ''
+    '_FillValue'    default_fill_value };
+
   % METS sensor
   var_attr_list.METS_METHANE_VOLT = {
     'long_name'     'Methane concentration raw'

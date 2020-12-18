@@ -47,6 +47,10 @@ function mat = generateOutputMatlab(filename, data, meta, data_grid, meta_grid, 
     error(nargchk(6, 6, nargin, 'struct'));
   
   
+    %% Convert posixtime to UTC
+    data.time = posixtime2utc(data.time)
+    data_grid.time = posixtime2utc(data_grid.time)
+    
     %% Fill structure 
     s = struct();
     s.deployment = deployment;

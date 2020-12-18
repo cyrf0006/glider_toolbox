@@ -93,6 +93,7 @@ function preprocessing_options = configDataPreprocessingSeaExplorer()
   preprocessing_options.optics_list(3).chlorophyll = 'FLNTU_CHL_SCALED';
   preprocessing_options.optics_list(3).turbidity = 'FLNTU_NTU_SCALED';  
 
+  
   %% Extra sensors
   % Minifluo1-UV1 choices:
   preprocessing_options.extra_sensor_list.minifluo1(1).fluorescence_270_340 = 'MFLUV1_V1_COUNT';
@@ -148,12 +149,15 @@ function preprocessing_options = configDataPreprocessingSeaExplorer()
   preprocessing_options.extra_sensor_list.minifluo2(2).fluorescence_emission_temperature = 'M2FL_TMPE';
   preprocessing_options.extra_sensor_list.minifluo2(2).fluorescence_detection_temperature = 'M2FL_TMPD';   
   
-  
   % Methane sensor choices:
   preprocessing_options.extra_sensor_list.methane(1).methane_volt = 'METS_METHANE_VOLT';
   preprocessing_options.extra_sensor_list.methane(1).methane_concentration = 'METS_METHANE_SCALED';
   preprocessing_options.extra_sensor_list.methane(1).mets_circuit_temperature_volt = 'METS_TEMP_VOLT';
   preprocessing_options.extra_sensor_list.methane(1).mets_circuit_temperature = 'METS_TEMP_SCALED';
-
+  
+  % Rinko oxygen
+  preprocessing_options.extra_sensor_list.rinko(1).rinko_oxygen = 'AROD_FT_DO';
+  preprocessing_options.extra_sensor_list.rinko(1).rinko_temperature = 'AROD_FT_TEMP';
+  
 end
 

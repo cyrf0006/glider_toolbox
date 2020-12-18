@@ -80,6 +80,8 @@ function gridding_options = configDataGridding()
     'methane_concentration'
     'backscatter_700'
     'oxygen_frequency'   
+    'rinko_oxygen'   
+    'rinko_temperature'   
     'pitch'
   };
 
